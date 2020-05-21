@@ -1,15 +1,10 @@
 <template>
-<div>
-  <div class="header">
-     <Header></Header>
+  <div>
+    <Header></Header>
+    <div class="container">
+        <router-view></router-view>
+    </div>
   </div>
- 
-  <div class="container">
-     <router-view></router-view>
-   </div>
-</div>
-   
-
 </template>
 
 <script>
@@ -22,6 +17,12 @@ export default {
 </script>
 
 <style lang="scss">
+  *{
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+  }
+
   h2{
     margin-bottom: 3rem;
   }
@@ -30,6 +31,7 @@ export default {
   }
   .container{
     padding: 3% 15%;
+    /* margin-top: 3rem; */
   }
  /*  .header{
     position: fixed;
