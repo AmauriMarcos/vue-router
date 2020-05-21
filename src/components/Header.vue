@@ -1,32 +1,21 @@
 <template>
     <div class="app">
-        <div
+       <div
           class="navbar"
           :class="{ 'navbar--hidden': !showNavbar }"
-          
-        >
-          <v-app>
-            <v-tabs
-              fixed-tabs
-              background-color='indigo accent-2'
-              dark
-            >
-            <v-tabs-slider color="blue-grey darken-4"></v-tabs-slider>
-            <v-tab to="/">
-              Home
-            </v-tab>
-            <v-tab to="/user">
-              User
-            </v-tab>
-            <v-tab to="/user/detail">
-              Details
-            </v-tab>
-            <v-tab to="/user/start">
-              Start
-            </v-tab>
-            </v-tabs>
-          </v-app>
-        </div>
+       >
+          <div class="logo">
+            <h2>Logo</h2>
+          </div>
+
+          <ul class="items">
+              <router-link to='/'  active-class="active" exact="/"><a>Home</a></router-link>
+              <router-link to='/user'  active-class="active" exact="/user"><a>User</a></router-link>
+              <router-link to='/user/detail'  active-class="active" exact="/user/detail"><a>Detail</a></router-link>
+              <router-link to='/user/edit'  active-class="active"><a>Edit</a></router-link>
+              <router-link to='/user/start'  active-class="active" exact="/user/start"><a>Start</a></router-link>
+          </ul>
+       </div>   
     </div>
 </template>
 
@@ -47,12 +36,13 @@ export default {
    methods:{
      onScroll () {
         const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+        console.log(currentScrollPosition);
         if (currentScrollPosition < 0) {
           return
         }
         // Stop executing this function if the difference between
         // current scroll position and last scroll position is less than some offset
-        if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 200) {
+        if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 100) {
           return
         }
         this.showNavbar = currentScrollPosition < this.lastScrollPosition
@@ -64,22 +54,43 @@ export default {
 
 <style lang="scss" scoped>
 
+li{
+  margin-right: 15px;
+  list-style: none;
+  
+}
+
+a{
+ text-decoration: none;
+ color: white;
+ padding: 1rem;
+}
+
+.active:after{
+  content: "";
+  display: block;
+  background-color: chartreuse;
+  margin: 2px;
+  height: 1px;
+  transform: translateY(.1rem);
+}
+
 .app {
   width: 100vw;
- /*  margin-bottom: 3rem; */
- height: 15vh;
- 
+  height: 10vh;
 }
+
 
 .navbar {
   height: 60px;
   width: 100vw;
+  background: hsl(273, 34%, 47%);
   position: fixed;
-/*   top: 0;
-  left: 0; */
-  box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
+  box-shadow: 0 2px 15px rgba(134, 139, 139, 0.5);
   transform: translate3d(0, 0, 0);
   transition: 0.1s all ease-out;
+  display: grid;
+  grid-template: repeat(6, 1fr);
 }
 
 .navbar.navbar--hidden {
@@ -87,15 +98,20 @@ export default {
   transform: translate3d(0, -100%, 0);
 }
 
-.v-application--wrap{
-  min-height: 0vh !important;
+.logo{
+  grid-column: 1/3;
+  grid-row: 1/2;
 }
 
-.theme--light.v-application{
-  background: none;
+.items{
+  grid-column: 2/5;
+  grid-row: 1/2;
+  display: flex;
 }
 
-.navbar[data-v-61dd7a3d]{
-  box-shadow: none;
+.router-link-active{
+  opacity: 1;
+  visibility: visible;
 }
+
 </style>
