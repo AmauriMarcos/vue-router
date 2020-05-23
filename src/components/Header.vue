@@ -9,11 +9,11 @@
           </div>
 
           <ul class="items">
-              <router-link to='/'  active-class="active" exact="/"><a>Home</a></router-link>
-              <router-link to='/user'  active-class="active" exact="/user"><a>User</a></router-link>
-              <router-link to='/user/detail'  active-class="active" exact="/user/detail"><a>Detail</a></router-link>
+              <router-link to='/'  active-class="active"><a>Home</a></router-link>
+              <router-link to='/user/10'  active-class="active" ><a>User</a></router-link>
+              <router-link to='/detail'  active-class="active" ><a>Detail</a></router-link>
               <router-link to='/user/edit'  active-class="active"><a>Edit</a></router-link>
-              <router-link to='/user/start'  active-class="active" exact="/user/start"><a>Start</a></router-link>
+              <router-link to='/user/start'  active-class="active" ><a>Start</a></router-link>
           </ul>
        </div>   
     </div>

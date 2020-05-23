@@ -11,11 +11,7 @@
 
 <script>
 export default {
-    methods: {
-      voltar(){
-        this.$router.push('/');
-      }
-    }
+   
 }
 </script>
 
