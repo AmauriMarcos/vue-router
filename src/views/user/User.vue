@@ -1,31 +1,21 @@
 <template>
    <div>
-       <h1>User</h1>
+       <h1>The User Page </h1>
        <hr>
-       <v-btn @click='voltar'>Voltar</v-btn>
-       <p>
-          Loaded ID: {{id}}
-       </p>
+       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, temporibus! A, qui alias cum quae laborum ab voluptatem illum at sit similique corrupti, commodi officia magni dolore vitae earum beatae?</p>
+       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, temporibus! A, qui alias cum quae laborum ab voluptatem illum at sit similique corrupti, commodi officia magni dolore vitae earum beatae?</p>
+       
    </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            id: this.$route.params.id
-        }
-    },
-    watch: {
-        '$route'(to, from){
-            this.id = to.params.id
-        }
-    },
-     methods: {
+ 
+    /*  methods: {
       voltar(){
         this.$router.push('/');
       }
-    }
+    } */
 }
 </script>
 
