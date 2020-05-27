@@ -7,10 +7,10 @@
           <div class="logo">
             <h2>Logo</h2>
           </div>
-
+          
           <ul class="items">
               <router-link  to='/'  active-class="active" exact="/"><a>Home</a></router-link>
-              <router-link  to='/user/something'  active-class="active" ><a>User</a></router-link>
+              <router-link  to='/user/102030'  active-class="active"><a>User</a></router-link>
           </ul>
        </div>   
     </div>
